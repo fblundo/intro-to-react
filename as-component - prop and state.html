@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My First React app</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+        <script type="text/babel">
+      class App extends React.Component {
+
+      constructor(props){
+           super(props);
+             this.state = {
+             budget: "high, medium, low"
+             }
+           }
+
+      render() {
+          return (
+            <div1>
+              <h3>Before going out, you should consider four factors: </h3>
+            <ul>
+              <li>People</li>
+              <li>Time: {info.date.toLocaleDateString()}</li>
+              <li>Budget: {this.state.budget}</li>
+              <li>Type of Event</li>
+            </ul>
+            </div1>
+         );
+        }
+      }
+
+      const info = {
+        date: new Date()
+      }
+
+      ReactDOM.render(
+      <App    />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
