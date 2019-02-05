@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Bloc</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+      class Counter extends React.Component {
+        render() {
+          return (
+            <div>
+              <img src={this.props.image} alt="Bloc Logo"/>
+              <h2>Current program: {this.props.label}</h2>
+              <p>Current Date: {this.props.date.toLocaleDateString()}</p>
+            </div>
+          );
+        }
+      }
+      const info = {
+        date: new Date()
+        image: 'https://avatars0.githubusercontent.com/u/1441485?v=4&s=280',
+      }
+
+      Counter.defaultProps = { //defaultProps allow us to pass in default values for props that are not specified in the component
+        label: "Web Developer Track"
+      }
+
+      ReactDOM.render(  //controls the contents of the container node you pass in; still, it doesn't matter how your order the elements below, their appearance on DOM  won't be impacted
+        <Counter
+          date={info.date} //even though label is not specified, the component will still render it correctly due to the defaultProps property
+          image={info.image}/>,document.getElementById('app')
+      );
+
+    </script>
+  </body>
+</html>
